@@ -116,7 +116,7 @@ function HomePage() {
       description: "Educational street theater raising awareness about health and social issues"
     },
     {
-      src: "https://images.pexels.com/photos/7551728/pexels-photo-7551728.jpeg?auto=compress&cs=tinysrgb&w=800",
+      src: "https://live.staticflickr.com/65535/54626252850_3ac771ab54.jpg",
       title: "Drug abuse and Alcoholism Awareness camp ",
       description: "An awareness camp against alcoholism and drug abuse"
     }
