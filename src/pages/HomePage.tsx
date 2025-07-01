@@ -106,7 +106,7 @@ function HomePage() {
       description: "Community outreach program promoting road safety and awareness"
     },
     {
-      src: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800",
+      src: "https://live.staticflickr.com/65535/54626238380_29dbbe9575_c.jpg",
       title: "Community Lunch",
       description: "Nutritional support and community building through shared meals"
     },
