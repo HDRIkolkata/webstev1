@@ -91,7 +91,7 @@ function HomePage() {
 
   const galleryImages = [
     {
-      src: "https://www.flickr.com/photos/203079058@N02/54625928721/in/dateposted-public/",
+      src: "https://live.staticflickr.com/65535/54626139833_b8cd1bf16b_c.jpg",
       title: "Contraceptive Awareness",
       description: "Community education program on reproductive health and family planning"
     },
