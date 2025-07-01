@@ -101,7 +101,7 @@ function HomePage() {
       description: "Wellness and mental health support through yoga and meditation"
     },
     {
-      src: "https://images.pexels.com/photos/7551659/pexels-photo-7551659.jpeg?auto=compress&cs=tinysrgb&w=800",
+      src: "https://live.staticflickr.com/65535/54625938846_988f7c69dc_c.jpg",
       title: "Road Safety Awareness", 
       description: "Community outreach program promoting road safety and awareness"
     },
