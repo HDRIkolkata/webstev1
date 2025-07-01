@@ -91,27 +91,27 @@ function HomePage() {
 
   const galleryImages = [
     {
-      src: "/gallery1.jpg",
+      src: "https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=800",
       title: "Contraceptive Awareness",
       description: "Community education program on reproductive health and family planning"
     },
     {
-      src: "/gallery2.jpg", 
+      src: "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=800", 
       title: "Yoga Session",
       description: "Wellness and mental health support through yoga and meditation"
     },
     {
-      src: "/gallery3.jpg",
+      src: "https://images.pexels.com/photos/7551659/pexels-photo-7551659.jpeg?auto=compress&cs=tinysrgb&w=800",
       title: "Road Safety Awareness", 
       description: "Community outreach program promoting road safety and awareness"
     },
     {
-      src: "/gallery4.jpg",
+      src: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800",
       title: "Community Lunch",
       description: "Nutritional support and community building through shared meals"
     },
     {
-      src: "/gallery5.jpg",
+      src: "https://images.pexels.com/photos/7551728/pexels-photo-7551728.jpeg?auto=compress&cs=tinysrgb&w=800",
       title: "Street Play Performance",
       description: "Educational street theater raising awareness about health and social issues"
     }
