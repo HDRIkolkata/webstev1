@@ -96,7 +96,7 @@ function HomePage() {
       description: "Community education program on reproductive health and family planning"
     },
     {
-      src: "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=800", 
+      src: "https://live.staticflickr.com/65535/54626139833_b8cd1bf16b_c.jpg", 
       title: "Yoga Session",
       description: "Wellness and mental health support through yoga and meditation"
     },
