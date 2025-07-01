@@ -18,13 +18,17 @@ import {
   UserCheck,
   GraduationCap,
   ArrowUp,
-  Heart
+  Heart,
+  Camera,
+  Play,
+  ZoomIn
 } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 
 function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -76,20 +80,40 @@ function HomePage() {
       link: "/programs/community-education"
     },
     {
-      icon: Users,
-      title: "Women's Health",
-      description: "Specialized services for women, including reproductive health education and support programs.",
-      color: "pink",
-      gradient: "from-pink-600 to-pink-700",
-      link: "/programs/womens-health"
-    },
-    {
       icon: Heart,
       title: "Community Outreach",
       description: "Direct community engagement programs providing support and resources to vulnerable populations.",
       color: "purple",
       gradient: "from-purple-600 to-purple-700",
       link: "/programs/community-outreach"
+    }
+  ];
+
+  const galleryImages = [
+    {
+      src: "/gallery1.jpg",
+      title: "Contraceptive Awareness",
+      description: "Community education program on reproductive health and family planning"
+    },
+    {
+      src: "/gallery2.jpg", 
+      title: "Yoga Session",
+      description: "Wellness and mental health support through yoga and meditation"
+    },
+    {
+      src: "/gallery3.jpg",
+      title: "Road Safety Awareness", 
+      description: "Community outreach program promoting road safety and awareness"
+    },
+    {
+      src: "/gallery4.jpg",
+      title: "Community Lunch",
+      description: "Nutritional support and community building through shared meals"
+    },
+    {
+      src: "/gallery5.jpg",
+      title: "Street Play Performance",
+      description: "Educational street theater raising awareness about health and social issues"
     }
   ];
 
@@ -113,6 +137,7 @@ function HomePage() {
               <div className="ml-10 flex items-baseline space-x-8">
                 <a href="#about" className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-teal-50">About</a>
                 <a href="#programs" className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-teal-50">Programs</a>
+                <a href="#gallery" className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-teal-50">Gallery</a>
                 <a href="#impact" className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-teal-50">Impact</a>
                 <a href="#contact" className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-teal-50">Contact</a>
                 <a href="#contact" className="bg-gradient-to-r from-teal-600 to-teal-700 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-teal-700 hover:to-teal-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">Get Help</a>
@@ -137,6 +162,7 @@ function HomePage() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-teal-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-teal-50 transition-colors">About</a>
               <a href="#programs" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-teal-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-teal-50 transition-colors">Programs</a>
+              <a href="#gallery" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-teal-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-teal-50 transition-colors">Gallery</a>
               <a href="#impact" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-teal-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-teal-50 transition-colors">Impact</a>
               <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-teal-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-teal-50 transition-colors">Contact</a>
               <a href="#contact" onClick={() => setIsMenuOpen(false)} className="bg-gradient-to-r from-teal-600 to-teal-700 text-white block px-3 py-2 rounded-md text-base font-medium hover:from-teal-700 hover:to-teal-800 transition-all duration-200 mx-3 text-center">Get Help</a>
@@ -293,6 +319,68 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section id="gallery" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-teal-50 rounded-full text-sm font-medium text-teal-700 border border-teal-200 mb-4">
+              <Camera className="h-4 w-4 mr-2" />
+              Our Work in Action
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Gallery</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Capturing moments from our community programs and outreach activities
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {galleryImages.map((image, index) => (
+              <div key={index} className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={image.src} 
+                    alt={image.title}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <button
+                    onClick={() => setSelectedImage(image.src)}
+                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                      <ZoomIn className="h-6 w-6 text-white" />
+                    </div>
+                  </button>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{image.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{image.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
+          <div className="relative max-w-4xl max-h-full">
+            <img 
+              src={selectedImage} 
+              alt="Gallery image"
+              className="max-w-full max-h-full object-contain rounded-lg"
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 hover:bg-white/30 transition-colors"
+            >
+              <X className="h-5 w-5 text-white" />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Impact Statistics */}
       <section id="impact" className="py-20 bg-gradient-to-br from-teal-600 via-teal-700 to-blue-700 text-white relative overflow-hidden">
         {/* Background Pattern */}
@@ -420,8 +508,8 @@ function HomePage() {
             <div>
               <h4 className="text-lg font-semibold mb-6 text-white">Quick Links</h4>
               <div className="space-y-3">
-                {['About Us', 'Our Programs', 'Impact', 'Contact'].map((link, index) => (
-                  <a key={index} href={`#${link.toLowerCase().replace(' ', '')}`} className="block text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 transform">
+                {['About Us', 'Our Programs', 'Gallery', 'Impact', 'Contact'].map((link, index) => (
+                  <a key={index} href={`#${link.toLowerCase().replace(' ', '').replace('our', '')}`} className="block text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 transform">
                     {link}
                   </a>
                 ))}
